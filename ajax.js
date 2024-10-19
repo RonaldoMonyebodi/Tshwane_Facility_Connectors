@@ -14,7 +14,8 @@ $('#addRoom').submit(function () {
         success: function (response) {
             if (response.done == true) {
                 $('#addRoom').modal('hide');
-                window.location.href = 'index.php?room_mang';
+                window.location.href = 'inde
+                x.php?room_mang';
             } else {
                 $('.response').html('<div class="alert bg-danger alert-dismissable" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em>' + response.data + '</div>');
             }

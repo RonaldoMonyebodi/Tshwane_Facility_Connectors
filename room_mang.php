@@ -4,7 +4,7 @@
             <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-            <li class="active">Manage Rooms</li>
+            <li class="active">Manage Facilities</li>
         </ol>
     </div><!--/.row-->
 
@@ -19,8 +19,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Manage Rooms
-                    <button class="btn btn-secondary pull-right" style="border-radius:0%" data-toggle="modal" data-target="#addRoom">Add Rooms</button>
+                <div class="panel-heading">Manage Facilities
+                    <button class="btn btn-secondary pull-right" style="border-radius:0%" data-toggle="modal" data-target="#addRoom">Add Facilities</button>
                 </div>
                 <div class="panel-body">
                     <?php
@@ -39,8 +39,8 @@
                            id="rooms">
                         <thead>
                         <tr>
-                            <th>Room No</th>
-                            <th>Room Type</th>
+                            <th>Facility Id</th>
+                            <th>Facility Description</th>
                             <th>Booking Status</th>
                             <th>Check In</th>
                             <th>Check Out</th>
@@ -105,7 +105,7 @@
                                 </tr>
                             <?php }
                         } else {
-                            echo "No Rooms";
+                            echo "No Facilities";
                         }
                         ?>
 
@@ -125,7 +125,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add New Room</h4>
+                    <h4 class="modal-title">Add New Facility</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -133,10 +133,10 @@
                             <form id="addRoom" data-toggle="validator" role="form">
                                 <div class="response"></div>
                                 <div class="form-group">
-                                    <label>Room Type</label>
+                                    <label>Facility Type</label>
                                     <select class="form-control" id="room_type_id" required
-                                            data-error="Select Room Type">
-                                        <option selected disabled>Select Room Type</option>
+                                            data-error="Select Facility Type">
+                                        <option selected disabled>Select Facility Type</option>
                                         <?php
                                         $query = "SELECT * FROM room_type";
                                         $result = mysqli_query($connection, $query);
@@ -151,12 +151,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Room No</label>
-                                    <input class="form-control" placeholder="Room No" id="room_no"
-                                           data-error="Enter Room No" required>
+                                    <label>Facility Id</label>
+                                    <input class="form-control" placeholder="Facility Id" id="room_no"
+                                           data-error="Enter Facility Id" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <button class="btn btn-success pull-right">Add Room</button>
+                                <button class="btn btn-success pull-right">Add Facility</button>
                             </form>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit Room</h4>
+                    <h4 class="modal-title">Edit Facility</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -181,10 +181,10 @@
                             <form id="roomEditFrom" data-toggle="validator" role="form">
                                 <div class="edit_response"></div>
                                 <div class="form-group">
-                                    <label>Room Type</label>
+                                    <label>Facility Type</label>
                                     <select class="form-control" id="edit_room_type" required
-                                            data-error="Select Room Type">
-                                        <option selected disabled>Select Room Type</option>
+                                            data-error="Select Facility Type">
+                                        <option selected disabled>Select Facility Type</option>
                                         <?php
                                         $query = "SELECT * FROM room_type";
                                         $result = mysqli_query($connection, $query);
@@ -199,13 +199,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Room No</label>
-                                    <input class="form-control" placeholder="Room No" id="edit_room_no" required
-                                           data-error="Enter Room No">
+                                    <label>Facility Id</label>
+                                    <input class="form-control" placeholder="Facility Id" id="edit_room_no" required
+                                           data-error="Enter Facility Id">
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <input type="hidden" id="edit_room_id">
-                                <button class="btn btn-success pull-right">Edit Room</button>
+                                <button class="btn btn-success pull-right">Edit Facility</button>
                             </form>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center"><b>Customer's Detail</b></h4>
+                    <h4 class="modal-title text-center"><b>Patrons's Details</b></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -236,7 +236,7 @@
                                 </thead> -->
                                 <tbody>
                                 <tr>
-                                    <td><b>Customer Name</b></td>
+                                    <td><b>Patron Name</b></td>
                                     <td id="customer_name"></td>
                                 </tr>
                                 <tr>
@@ -281,7 +281,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center"><b>Room - Check In</b></h4>
+                    <h4 class="modal-title text-center"><b>Facility - Check In</b></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -290,15 +290,15 @@
                                 
                                 <tbody>
                                 <tr>
-                                    <td><b>Customer Name</b></td>
+                                    <td><b>Patron Name</b></td>
                                     <td id="getCustomerName"></td>
                                 </tr>
                                 <tr>
-                                    <td><b>Room Type</b></td>
+                                    <td><b>Patron Type</b></td>
                                     <td id="getRoomType"></td>
                                 </tr>
                                 <tr>
-                                    <td><b>Room Number</b></td>
+                                    <td><b>Facility Id</b></td>
                                     <td id="getRoomNo"></td>
                                 </tr>
                                 <tr>
@@ -341,7 +341,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center"><b>Room- Check Out</b></h4>
+                    <h4 class="modal-title text-center"><b>Facility- Check Out</b></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -350,15 +350,15 @@
                                 
                                 <tbody>
                                 <tr>
-                                    <td><b>Customer Name</b></td>
+                                    <td><b>Patron Name</b></td>
                                     <td id="getCustomerName_n"></td>
                                 </tr>
                                 <tr>
-                                    <td><b>Room Type</b></td>
+                                    <td><b>Facility Type</b></td>
                                     <td id="getRoomType_n"></td>
                                 </tr>
                                 <tr>
-                                    <td><b>Room Number</b></td>
+                                    <td><b>Facility Id</b></td>
                                     <td id="getRoomNo_n"></td>
                                 </tr>
                                 <tr>
@@ -402,7 +402,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-        <p class="back-link">Developed By Prem Chand Saini</p>
+        <p class="back-link">Developed By Tshwane Facility Connectors @2024</p>
         </div>
     </div>
 

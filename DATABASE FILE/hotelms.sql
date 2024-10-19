@@ -227,10 +227,11 @@ INSERT INTO `room` (`room_id`, `room_type_id`, `room_no`, `status`, `check_in_st
 --
 
 CREATE TABLE `room_type` (
-  `room_type_id` int(10) NOT NULL,
+  `room_type_id` int(10) NOT NULL AUTO_INCREMENT,
   `room_type` varchar(100) NOT NULL,
   `price` int(10) NOT NULL,
-  `max_person` int(10) NOT NULL
+  `max_person` int(10) NOT NULL,
+  PRIMARY KEY (`room_type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -238,16 +239,17 @@ CREATE TABLE `room_type` (
 --
 
 INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `max_person`) VALUES
-(1, 'Single', 1000, 1),
-(2, 'Double', 1500, 2),
-(3, 'Triple', 2000, 3),
-(4, 'Family', 3000, 2),
-(5, 'King Sized', 5500, 4),
-(6, 'Master Suite', 6500, 6),
-(7, 'Mini-Suite', 3600, 3),
-(8, 'Connecting Rooms', 8000, 6),
-(9, 'Presidential Suite', 21000, 4),
-(10, 'Murphy Room', 6900, 3);
+(1, 'Museums', 1000, 1),
+(2, 'Resorts', 1500, 2),
+(3, 'Parks', 2000, 3),
+(4, 'Game Reserves', 3000, 2),
+(5, 'Swimming Pools', 5500, 4),
+(6, 'Church Squares', 6500, 6),
+(7, 'Historical Sites', 3600, 3),
+(8, 'Hotels', 8000, 6);
+
+
+
 
 -- --------------------------------------------------------
 
@@ -476,7 +478,7 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `room_type`
 --
 ALTER TABLE `room_type`
-  MODIFY `room_type_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `room_type_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `shift`
 --

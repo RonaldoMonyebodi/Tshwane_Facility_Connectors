@@ -42,26 +42,26 @@
         if (isset($_GET['room_mang'])){ ?>
             <li class="active">
                 <a href="index.php?room_mang"><em class="fa fa-bed">&nbsp;</em>
-                    Manage Rooms
+                    Manage Facilities
                 </a>
             </li>
         <?php } else{?>
             <li>
             <a href="index.php?room_mang"><em class="fa fa-bed">&nbsp;</em>
-                    Manage Rooms
+                    Manage Facilities
                 </a>
             </li>
         <?php }
         if (isset($_GET['staff_mang'])){ ?>
             <li class="active">
                 <a href="index.php?staff_mang"><em class="fa fa-users">&nbsp;</em>
-                    Staff Section
+                    Tourists Availability
                 </a>
             </li>
         <?php } else{?>
             <li>
                 <a href="index.php?staff_mang"><em class="fa fa-users">&nbsp;</em>
-                    Staff Section
+                 Tourists Availability
                 </a>
             </li>
         <?php }

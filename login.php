@@ -19,7 +19,7 @@
 
 <div class="container">
     <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="img/htl.png"/>
+        <img id="profile-img" class="profile-img-card" src="img/WhatsApp Image 2024-10-18 at 23.58.57.png"/>
         
         <br>
         <div class="result">
